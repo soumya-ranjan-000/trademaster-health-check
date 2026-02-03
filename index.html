@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeMaster | Sentinel Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <i data-lucide="shield-check" class="logo-icon"></i>
+                <h1>SENTINEL<span>HQ</span></h1>
+            </div>
+            <div class="clock-area">
+                <p id="ist-time">--:--:-- IST</p>
+                <div id="sleep-badge" class="badge">ACTIVE MONITORING</div>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Left Sidebar: Stats -->
+            <aside class="stats-sidebar">
+                <div class="stat-card">
+                    <p class="stat-label">System Pulse</p>
+                    <p id="countdown" class="stat-value">14:00</p>
+                    <p class="stat-label" style="margin-top: 5px;">Next Automated Ping</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Sentinel State</p>
+                    <p id="system-state" class="stat-value text-success">HEALTHY</p>
+                    <p class="stat-label" style="margin-top: 5px;">All Systems Nominal</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Monitoring Nodes</p>
+                    <p class="stat-value">4 Online</p>
+                    <p class="stat-label" style="margin-top: 5px;">Cluster Coverage: 100%</p>
+                </div>
+            </aside>
+
+            <!-- Main Right Area -->
+            <main class="main-content">
+                <!-- Services Row -->
+                <div id="services-container" class="services-grid">
+                    <!-- 4 Services will be injected here into 2x2 grid -->
+                </div>
+
+                <!-- Logs Area -->
+                <section class="log-section">
+                    <div class="log-header">
+                        <h3><i data-lucide="terminal" size="14"></i> Live Event Stream</h3>
+                        <button id="clear-logs">Clear History</button>
+                    </div>
+                    <div id="logs" class="log-body">
+                        <div class="log-entry">Waiting for link establishment...</div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>TradeMaster Autonomous Sentinel • V1.0.2 • Keeping Ecosystem Warm</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
