@@ -1,0 +1,31 @@
+name: Sentinel HQ Pulse
+
+on:
+  schedule:
+    # Runs every 15 minutes from 01:30 UTC (07:00 IST) to 18:30 UTC (00:00 IST)
+    # Cron is in UTC. IST is UTC + 5.5 hours.
+    - cron: '*/15 1-18 * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Establish Neural Link (Ping Services)
+        run: |
+          echo "Initiating global pulse sequence..."
+          
+          SERVICES=(
+            "https://trademaster-paper-trading-service.onrender.com/health"
+            "https://trademaster-watchlist-generation-service.onrender.com/health"
+            "https://trademasterbackend.onrender.com/health"
+            "https://icici-dirct-breeze-api-interface.onrender.com/health"
+          )
+          
+          for url in "${SERVICES[@]}"; do
+            echo "Pulsing $url..."
+            curl -s -o /dev/null -w "%{http_code}" "$url"
+            echo " - Status check complete."
+          done
+          
+          echo "Global pulse sequence finalized. Ecosystem secured."

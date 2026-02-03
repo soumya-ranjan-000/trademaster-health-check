@@ -4,8 +4,9 @@ A premium, static dashboard designed to monitor and keep-alive the TradeMaster e
 
 ## Features
 
-- **Keep-Alive Pulses**: Pings all services every **14 minutes** to prevent Render's free-tier 15-minute hibernation.
-- **IST Smart Scheduling**: Automatically observes "Sleep Mode" between **12:00 AM and 7:00 AM IST** to save resources and comply with sleep hours.
+- **Keep-Alive Pulses**: Pings all services every **14 minutes** when the dashboard is open.
+- **Ghost Sentinel (Autopilot)**: Automated **GitHub Actions** pulse every 15 minutes in the background—no browser tab required!
+- **IST Smart Scheduling**: Automatically observes "Sleep Mode" between **12:00 AM and 7:00 AM IST** (in both Dashboard and Bot).
 - **Deep Status Monitoring**: Real-time dashboard showing latency and system health.
 - **Zero-Downtime Hosting**: Designed to be hosted on **GitHub Pages**.
 
