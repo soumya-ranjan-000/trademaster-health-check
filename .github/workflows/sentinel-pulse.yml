@@ -4,7 +4,8 @@ on:
   schedule:
     # Runs every 15 minutes from 01:30 UTC (07:00 IST) to 18:30 UTC (00:00 IST)
     # Cron is in UTC. IST is UTC + 5.5 hours.
-    - cron: '*/15 1-18 * * *'
+    - cron: '30,45 1-17 * * *'   # 01:30,01:45 ... 17:45
+    - cron: '0,15,30 2-18 * * *' # 02:00,02:15 ... 18:30
   workflow_dispatch: # Allows manual triggering from GitHub UI
 
 jobs:
