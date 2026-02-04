@@ -21,7 +21,7 @@ const SERVICES = [
     }
 ];
 
-const PING_INTERVAL_MIN = 14;
+const PING_INTERVAL_MIN = 4;
 let nextPingTime = Date.now() + (PING_INTERVAL_MIN * 60 * 1000);
 
 // Initialize Lucide Icons
